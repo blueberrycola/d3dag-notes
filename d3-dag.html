@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>d3-dag</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><p>A <a href="https://erikbrinkman.github.io/d3-dag/modules/dag_node.html#dag">Dag</a> is simply a collection of <a href="https://erikbrinkman.github.io/d3-dag/modules/dag_node.html#dagnode">DagNode</a>s,: <strong>defined by every reachable child node from the current returned node</strong></p>
+<p>Three methods exist to turn existing data into  <a href="https://erikbrinkman.github.io/d3-dag/modules/dag_node.html#dag">Dag</a>s:</p>
+<ol>
+<li>{@link “dag/hierarchy” | dagHierarchy} - when the data already has a dag structure.</li>
+<li>{@link “dag/stratify” | dagStratify } - when the dag has a tabular structure, referencing parents by id.</li>
+<li>{@link “dag/connect” | dagConnect } - when the dag has a link structure and is specified as pairs of nodes.</li>
+</ol>
+<p>Dag The union of a <a href="https://erikbrinkman.github.io/d3-dag/modules/dag_node.html#dagnode">DagNode</a> and <a href="https://erikbrinkman.github.io/d3-dag/modules/dag_node.html#dagroot">DagRoot</a>, representing the return value of a Dag constructor. Since the interface between <a href="https://erikbrinkman.github.io/d3-dag/modules/dag_node.html#dagnode">DagNode</a>s and <a href="https://erikbrinkman.github.io/d3-dag/modules/dag_node.html#dagroot">DagRoot</a>s is almost identical, this union is mostly inconsequential, and all methods can be fond within <a href="https://erikbrinkman.github.io/d3-dag/classes/dag_node.layoutdagroot.html">LayoutDagRoot</a>.</p>
+<p>In order to make a visualization<br>
+you must first make a union of DagNode and DagRoot and more.</p>
+<p>Different Layout Algorithms:</p>
+<p>The <strong>sugiyama</strong> method is a way to render DAGs by assigning each node a layer, and then aligning nodes within a layer to produce a pleasing DAG layout. This algorithm is the primary method to lay out DAGs in d3-dag.</p>
+<p>Zhrerebko:<br>
+This layout algorithm constructs a topological representation of the DAG meant for visualization. The algorithm is based off a PR by D. Zherebko. The nodes are topologically ordered, and edges are then positioned into “lanes” to the left and right of the nodes<br>
+Observations:<br>
+Nodes can have intertwining lines<br>
+Arquint:<br>
+This layout algorithm treats nodes not as points (i.e. producing x &amp; y coordinates) but as rectangles. An accessor is supplied to extract a <em>heightRatio</em> from each node, specifying its height in comparison to other nodes. The implementation was contributed by the author <a href="https://linardarquint.com/">L. Arquint</a> and provides different algorithms to distribute the nodes along the x-axis.</p>
+<p>Arrows:<br>
+Any layout algorithm can have arrows pointing to its decedents.<br>
+Expandable Family Tree: Check Github repo</p>
+<p>Formats:<br>
+dag format, tabular, edge<br>
+Layout:<br>
+standard, topological, variable sized nodes</p>
+</div>
+</body>
+
+</html>

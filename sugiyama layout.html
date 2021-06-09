@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sugiyama layout</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h2 id="sugiyama-layout-analysis">Sugiyama Layout Analysis:</h2>
+<p>It is used to render DAGs by assigning each node a layer. Aligning nodes within a layer to produce a good layout. <strong>Primary method used in d3-dag</strong></p>
+<p><em><strong>About:</strong></em><br>
+The sugiyama layout can be configured with different algorithms for each stage of the layout. For each stage there should be adecuate choices for methods that balance speed and quality for your needs<br>
+<em><strong>Choices:</strong></em><br>
+Layering: assigns each node a layer. {Simplex (slow), Longest path (fast) coffman graham (‘medium’)}<br>
+<strong>OBSERVATION: in the document page selecting coffman causes a crash on notebook web app</strong><br>
+Crossing Minimization: This sets how to arrange each node in a layer to minimize edge crossings, <strong>most expensive part</strong>.<br>
+Optimal contained the least edge crossings<br>
+two layer opt, median, and mean are the others.<br>
+<strong>OBSERVATION: browser switched through them quickly as opposed to layering drop down</strong><br>
+Coordinate Assignment: This gives ordered nodes in a layer an actual x coord, spacing some out more than others<br>
+Quadratic: looks good but slow on performance<br>
+Greedy: looks ok (medium on performance)<br>
+Center: Several edge crossings, hard to read (fast performance)</p>
+</div>
+</body>
+
+</html>
